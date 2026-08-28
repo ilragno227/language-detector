@@ -62,7 +62,7 @@ def detect_language(text):
 
 
 # 3. Streamlit Web UI Layout
-st.title("🌐 Language Detection App")
+st.title("🌐 Ilragnino's Language Detection")
 st.write("Enter text below to detect its language:")
 
 # Input text area
