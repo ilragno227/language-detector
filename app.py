@@ -80,3 +80,21 @@ if st.button("Detect Language", type="primary"):
       lang_name, confidence = result
       st.success(f"**Detected Language:** {lang_name}")
       st.info(f"**Confidence Score:** {confidence:.2%}")
+
+# Sort languages alphabetically for better readability
+sorted_languages = sorted(LANG_MAP.values())
+
+with st.sidebar:
+  st.header("🌐 Supported Languages")
+  st.write(f"This model supports **{len(LANG_MAP)} languages**:")
+
+  # Display as a multi-column list inside an expander
+  with st.expander("View Full List"):
+    col1, col2 = st.columns(2)
+    half = len(sorted_languages) // 2
+    with col1:
+      for lang in sorted_languages[:half]:
+        st.markdown(f"• {lang}")
+    with col2:
+      for lang in sorted_languages[half:]:
+        st.markdown(f"• {lang}")
